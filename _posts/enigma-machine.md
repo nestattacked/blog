@@ -1,7 +1,7 @@
 ---
 title: Enigma Machine
 date: 2015-12-15 11:34:23
-description: 简单介绍一下Enigma Machine的工作方式，真的是很简单地介绍一下。
+excerpt: 简单介绍一下Enigma Machine的工作方式，真的是很简单地介绍一下。
 tags:
 - enigma
 - 加密

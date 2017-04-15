@@ -1,7 +1,7 @@
 ---
 title: 终于搞定了
 date: 2015-12-01 11:32:22
-description: 是的，这个网站又开门了。
+excerpt: 是的，这个网站又开门了。
 thumbnail: /2015/12/01/finally-done/start.jpg
 tags:
 - 开门红

@@ -1,7 +1,7 @@
 ---
 title: js中的属性读取
 date: 2016-10-22 11:00:23
-description: 关于js属性读取的一些记录。为属性设置getter和setter之后会怎样影响属性读取的工作方式呢？原型链上的属性读取又是怎样的呢？
+excerpt: 关于js属性读取的一些记录。为属性设置getter和setter之后会怎样影响属性读取的工作方式呢？原型链上的属性读取又是怎样的呢？
 thumbnail: /2016/10/22/set-get-in-js/set和get.jpg
 tags:
 - js

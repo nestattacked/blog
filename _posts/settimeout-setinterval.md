@@ -1,7 +1,7 @@
 ---
 title: 关于setTimeout和setInterval
 date: 2016-10-30 20:43:11
-description: 浏览器为我们提供了两种定时的方法，但是我们是否足够了解这两个方法的工作方式呢？经过测试，我胡诌出了一个解释，目前和实际还是比较符合的。
+excerpt: 浏览器为我们提供了两种定时的方法，但是我们是否足够了解这两个方法的工作方式呢？经过测试，我胡诌出了一个解释，目前和实际还是比较符合的。
 thumbnail: /2016/10/30/settimeout-setinterval/clock.jpg
 tags:
 - 计时器
