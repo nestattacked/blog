@@ -10,7 +10,7 @@ categories:
 - 技术
 - 前端
 ---
-## 给出代码
+# 给出代码
 
 ```html
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ span{
 
 上面的代码将会给出怎么样的画面呢？而这样的画面又是根据怎么样的规则来得出的？想不明白吧，想不明白就对了。想明白请你走开。下面我们就一步步地介绍这个过程。
 
-## 从基准线说起
+# 从基准线说起
 
 首先，内联元素在排列的时候是依据基准线来分布的。如下所示，就是基准线。基准线就像是我们在练习英文书写时使用的那样，有四条线构成。这四条线分别是text-top、middle、baseline、text-bottom。text-top到text-bottom的高度就是我们书写的范围了，而这个高度是由block容器的font-size决定的。在这里p的font-size被设置为20px，所以text-top到text-bottom的距离就是20px了，middle线正好处于中间的位置，baseline则位于middle和text-bottom之间。
 
@@ -69,7 +69,7 @@ p中第一个内联的元素是文件hello，这是一个单纯的文字。font-
 
 ![baseline](inline_in_block_6.jpg)
 
-## 总结
+# 总结
 * 基准线的高度是由font-size决定的
 * 基准线的整体在line中是居中的
 * 所有内联元素都和基准线对齐，除非vertical-align指定

@@ -9,7 +9,7 @@ categories:
 - 技术
 - 其他
 ---
-## 什么是git
+# 什么是git
 
 想象一下这样的情景：小亮是一个苦逼的毕业党，日日夜夜都忙着写他的宝贝论文。终于，他写完了他第一个版本的论文“论文1”，开心地交给指导老师了。然而指导老师说，这个摘要不行，删掉重写！无奈之下，小亮删除了摘要并重新写了一份，到这里论文就成了“论文2”。就在小亮沾沾自喜的时候，老师打来了电话说道，昨天假酒喝多了，摘要不用改了，那样挺好的。小亮心中真是XXX了，这哪里还记得本来写了什么啊。
 
@@ -65,6 +65,8 @@ git init
 ```
 
 初始化命令会在项目目录下生成一个名为.git的文件夹，在该文件夹中包含了各种git在运作中需要使用到的数据。具体的数据就会在相关命令使用到的时候再介绍。自此，一个完整的git项目就已经创建好了。
+
+# git常用的命令
 
 ## git add
 
@@ -254,7 +256,7 @@ git log --pretty=online --graph
 
 git log命令用来输出当前分支的commit记录，git会告诉我们最近的commit都有哪些。--pretty=online表示使用简化的信息展示数据，而--graph则表示附带图形的效果，git会给我们绘制一个文字版的关系图。
 
-## github的使用
+# github的使用
 
 ```bash
 ssh-keygen -t ras -C "your-email@xxx.om"
@@ -271,7 +273,7 @@ git config --global user.email "your@email.com"
 
 完成配置之后，我们就可以在github上点击new repository创建一个新的项目了，完成创建之后，github就会告诉我们如果使用了。最方便的做法就是直接在本地执行git clone git@yourgiturl，这样就建立其本地和远程库的关系了。在本地完成项目之后就可以执行git push origin master把代码推送到github上。
 
-## 参考资料
+# 参考资料
 
 * [git from the inside out](https://maryrosecook.com/blog/post/git-from-the-inside-out)
 * [图解git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
