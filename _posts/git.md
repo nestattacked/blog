@@ -141,7 +141,7 @@ git branch new_branch
 
 这条命令会创建一个新的分支new_branch，但是目前的分支依旧指向master，并没有改变。创建新的分支之后，git状态见下图。
 
-![git commit again](http://7xj4u9.com1.z0.glb.clouddn.com/blog_git_5.jpg)
+![git commit again](blog_git_5.jpg)
 
 ```bash
 git branch -d new_branch
@@ -158,7 +158,7 @@ git checkout HEAD~
 
 git checkout命令表示从仓库中提取文件。第一条命令后面跟的是一个分支名，将会把HEAD的指向修改，使其指向new_branch，与此同时，index和工作目录的文件就会被new_branch包含的文件替换掉。第二条命令没有具体的分支名，就会导致HEAD脱离，单独指向HEAD~这个commit。checkout HEAD~之后的git状态如下图所示。
 
-![git commit again](http://7xj4u9.com1.z0.glb.clouddn.com/blog_git_6.jpg)
+![git commit again](blog_git_6.jpg)
 
 ```bash
 git checkout HEAD~ paper
@@ -175,7 +175,7 @@ git reset HEAD~ --soft -- hard
 
 git reset命令在执行之后，会让HEAD所指向的分支内容改变，改变之后的分支会指向新的commit。同时，默认情况下，index的内容会被commit中的内容替换掉。第二条命令增加了两个新的参数，采用--soft参数之后，index的内容不会被替换，如果采用了--hard，则工作目录的内容会被commit内容替换掉。用户可以根据自己的需要适当添加。git reset HEAD~之后，下图是git内部的状态。
 
-![git commit again](http://7xj4u9.com1.z0.glb.clouddn.com/blog_git_7.jpg)
+![git commit again](blog_git_7.jpg)
 
 ## git checkout和reset的特例
 
