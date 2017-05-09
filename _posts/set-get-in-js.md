@@ -2,7 +2,6 @@
 title: js中的属性读取
 date: 2016-10-22 11:00:23
 excerpt: 关于js属性读取的一些记录。为属性设置getter和setter之后会怎样影响属性读取的工作方式呢？原型链上的属性读取又是怎样的呢？
-thumbnail: /2016/10/22/set-get-in-js/set和get.jpg
 tags:
 - js
 - setter
@@ -12,6 +11,7 @@ categories:
 - 技术
 - 前端
 ---
+![](set和get.jpg)
 # 最简单的情况
 
 ```javascript
@@ -58,12 +58,12 @@ console.log(base);
 ```javascript
 //set和get的使用方法
 var obj = {
-	get v(){
-		console.log('get is called');
-	},
-	set v(value){
-		console.log('set is called');
-	}
+    get v(){
+        console.log('get is called');
+    },
+    set v(value){
+        console.log('set is called');
+    }
 };
 
 obj.v;
@@ -77,14 +77,14 @@ set和get的用法就像是函数定义一样，当你定义了一个set和get�
 
 ```javascript
 var obj1 = {
-	get v(){},
-	v:1,
-	set v(v){}
+    get v(){},
+    v:1,
+    set v(v){}
 };
 var obj2 = {
-	get v(){},
-	set v(v){},
-	v:1
+    get v(){},
+    set v(v){},
+    v:1
 };
 ```
 

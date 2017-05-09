@@ -17,26 +17,26 @@ categories:
 <p>hello<span id="first"></span><span id="second">hello</span></p>
 <style>
 *{
-	padding:0;
-	margin:0;
+    padding:0;
+    margin:0;
 }
 p{
-	margin-top:100px;
-	line-height:40px;
-	font-size:20px;
-	background-color:red;
+    margin-top:100px;
+    line-height:40px;
+    font-size:20px;
+    background-color:red;
 }
 span{
-	width:10px;
-	height:10px;
-	display:inline-block;
+    width:10px;
+    height:10px;
+    display:inline-block;
 }
 #first{
-	background-color:blue;
+    background-color:blue;
 }
 #second{
-	font-size:20px;
-	background-color:grey;
+    font-size:20px;
+    background-color:grey;
 }
 </style>
 ```
