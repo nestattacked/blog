@@ -2,6 +2,7 @@
 title: inline元素是如何在block中渲染的
 date: 2016-09-25 00:23:54
 excerpt: 前端的页面渲染是基于框盒模型的，那么一个inline元素是如何在block中渲染的呢？如果给出一段html和css的代码，能不能在脑海中想象出正确的画面是一种非常重要的能力，能够比较好的反映出我们对于渲染方式的理解是否到位。
+recommend: 6
 tags:
 - inline
 - 框盒模型

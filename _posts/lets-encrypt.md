@@ -2,6 +2,7 @@
 title: 使用 let's encrypt 启动https
 date: 2017-05-12 00:23:10
 excerpt: https能够很好地保护网站通信的安全，防止第三方窃听篡改。而申请一个免费的https证书也已经是很容易的事情了，有条件的都可以给自己网站加个密，绿色的https看着也很爽嘛，：）。
+recommend: 5
 tags:
 - https
 - 证书

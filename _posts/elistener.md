@@ -2,6 +2,7 @@
 title: E-listener
 date: 2016-01-15 21:34:31 
 excerpt: 写了一个练习听力的小工具，勉强用用，总比没有好不是么。
+recommend: 4
 tags:
 - qt
 - 英语
