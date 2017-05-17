@@ -15,7 +15,7 @@ categories:
 
 ![E-Listener](e-listener.png)
 
-#使用方法
+# 使用方法
 
 界面从上到下一个五个区域，分别是：视频显示、信息栏、提示区、输入框、操作区。操作区对应的按钮分别是：打开文件、播放、下一题、显示答案、切换难度。那么该如何使用呢？
 
@@ -44,7 +44,7 @@ So if a photon is directed through a plane
 -d 1000 0
 ```
 
-#下载链接
+# 下载链接
 
 这里只提供window下的可运行程序，其他操作系统请自行编译，enjoy it。
 
