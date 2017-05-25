@@ -5,7 +5,7 @@ excerpt: 是的，这个网站又开门了。
 tags:
 - 开门红
 categories:
-- 废话
+- 生活
 ---
 ![](start.jpg)
 
