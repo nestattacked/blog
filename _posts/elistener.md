@@ -46,8 +46,9 @@ So if a photon is directed through a plane
 
 # 下载链接
 
-这里只提供window下的可运行程序，其他操作系统请自行编译，enjoy it。
+这里只提供window下的可运行程序，其他操作系统请自行编译。由于Qt依赖系统自身的编码器，我们可能需要下载额外的编码程序，windows下可以安装K-lite Codec Pack，Basic版本就可以了。
 
 * [源码](https://github.com/nestattacked/e-listener)
 * [win32可运行程序](http://yun.baidu.com/share/link?shareid=2177334546&uk=2474971635)
+* [K-lite Codec Pack](http://www.codecguide.com/download_kl.htm)
 * [TBBT的字幕](https://github.com/nestattacked/e-listener/tree/master/subtitle/TBBT01)
