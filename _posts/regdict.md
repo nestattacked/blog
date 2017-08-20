@@ -10,7 +10,7 @@ categories:
   - 哇！传说！
 date: 2017-08-15 00:09:12
 ---
-![regidct](regdict.jpg)
+![regdict](regdict.jpg)
 
 # 正则查单词的想法：regdict
 

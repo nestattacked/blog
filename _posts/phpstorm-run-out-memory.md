@@ -11,7 +11,7 @@ categories:
   - TroubleShoot
 date: 2017-06-27 00:38:44
 ---
-![phpstorm](phpstorm.png)
+![](phpstorm.png)
 
 # 卡顿的现象
 
