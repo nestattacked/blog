@@ -3,11 +3,12 @@ title: Enigma Machine
 date: 2015-12-15 11:34:23
 excerpt: 简单介绍一下Enigma Machine的工作方式，真的是很简单地介绍一下。
 tags:
-- enigma
-- 加密
+  - enigma
+  - 加密
 categories:
-- 技术
-- 其他
+  - 技术
+  - 其他
+thumbnail: full.jpg
 ---
 # 历史
 Enigma是一种用于加密与解密的机器，主要的使用者是第二次世界大战中的纳粹德国。加密的原理和普通的字母替换类似。比如规定如下的映射方式:

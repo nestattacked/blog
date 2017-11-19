@@ -9,6 +9,7 @@ categories:
   - 技术
   - 前端
 date: 2017-08-26 23:37:58
+thumbnail: capture-bubble.jpg
 ---
 # 事件模型概述
 

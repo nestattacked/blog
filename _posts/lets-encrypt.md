@@ -4,15 +4,14 @@ date: 2017-05-12 00:23:10
 excerpt: https能够很好地保护网站通信的安全，防止第三方窃听篡改。而申请一个免费的https证书也已经是很容易的事情了，有条件的都可以给自己网站加个密，绿色的https看着也很爽嘛，：）。
 recommend: 5
 tags:
-- https
-- 证书
-- certbot
+  - https
+  - 证书
+  - certbot
 categories:
-- 技术
-- 其他
+  - 技术
+  - 其他
+thumbnail: certbot.svg
 ---
-![](certbot.svg)
-
 # 关于let's encrypt
 
 为了让网站启动https，我们需要从一个被浏览器信任的证书机构那里获得一个证书来保证公钥能够安全地交换而不被篡改。早些时候，证书都是需要钱的。而let's encrypt的目的就是提供免费的证书来加速https的普及。比较方便的是，let's encrypt的证书签发是自动化的，通过一个叫做certbot的脚本程序来完成签发。

@@ -11,9 +11,8 @@ categories:
   - 技术
   - 其他
 date: 2017-05-27 00:40:19
+thumbnail: debug.png
 ---
-![](debug.png)
-
 在较新的版本中，node为我们提供了一种新的调试手段：在chrome中远程调试。node和chrome之间通过网络通信来同步debug信息，这让我们能够直接在chrome中调试代码，而这种调试几乎和前端是一样的！
 
 # node端需要做的

@@ -9,6 +9,7 @@ categories:
   - 技术
   - 数学 & 算法
 date: 2017-05-26 00:45:37
+thumbnail: tower.png
 ---
 ![汉诺塔](tower.png)
 

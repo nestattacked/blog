@@ -9,8 +9,9 @@ categories:
   - 技术
   - 哇！传说！
 date: 2017-08-15 00:09:12
+thumbnail: regdict.jpg
 ---
-![regdict](regdict.jpg)
+![](regdict.jpg)
 
 # 正则查单词的想法：regdict
 

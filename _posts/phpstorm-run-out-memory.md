@@ -10,9 +10,8 @@ categories:
   - 技术
   - TroubleShoot
 date: 2017-06-27 00:38:44
+thumbnail: phpstorm.png
 ---
-![](phpstorm.png)
-
 # 卡顿的现象
 
 在使用phpstorm编写代码的时候，每隔一小段时间就会出现卡死的情况，在等待一段时间后才能恢复正常。通过观察任务管理器我们可以发现phpstorm占用的内存在不段上升，直至用完为止，这个应该就是导致卡顿的原因了。

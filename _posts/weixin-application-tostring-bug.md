@@ -9,9 +9,8 @@ categories:
   - 技术
   - TroubleShoot
 date: 2017-08-19 15:47:02
+thumbnail: weixin-logo.png
 ---
-![](weixin-logo.png)
-
 # lodash在小程序中未正常工作
 
 在微信小程序中引入了lodash库，然后调用了`cloneDeep`方法去拷贝一个对象，但是函数却返回了空对象！最后通过调试，发现原因在于小程序并未实现`Function.prototype.toString`的方法。在开发者社区上提问，得到了微信官方的确认，确实存在问题。他们给出了一个解决办法，在app.js中加上代码（一定要加在lodash前面）：

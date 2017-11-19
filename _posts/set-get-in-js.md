@@ -3,15 +3,15 @@ title: js中的属性读取
 date: 2016-10-22 11:00:23
 excerpt: 关于js属性读取的一些记录。为属性设置getter和setter之后会怎样影响属性读取的工作方式呢？原型链上的属性读取又是怎样的呢？
 tags:
-- js
-- setter
-- getter
-- 属性读写
+  - js
+  - setter
+  - getter
+  - 属性读写
 categories:
-- 技术
-- 前端
+  - 技术
+  - 前端
+thumbnail: set和get.jpg
 ---
-![](set和get.jpg)
 # 最简单的情况
 
 ```javascript
