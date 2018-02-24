@@ -21,7 +21,17 @@ thumbnail: certbot.svg
 
 # 启用https
 
-certbot网站的首页提供了各种操作系统和web应用的证书获取方法，可以选择自己对应的情况来安装申请。我是ubuntu加nginx的环境，所以下面说的操作都是在这个前提下完成的。
+## 安装certbot
+
+certbot官网提供了各种操作系统和web服务器环境下的certbot获取方法，请选择自己对应的环境依据说明完成安装。我是ubuntu加nginx的环境，下面的命令可以在该环境下安装certbot。
+
+```
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
+```
 
 ## 申请新的证书
 
@@ -31,7 +41,7 @@ certbot certonly --webroot -w /usr/share/nginx/html/home/ -d nestattacked.com -d
 
 - certbot是let's encrypt提供的证书申请和管理程序。
 - certonly参数表明我们只对证书进行操作，不去自动修改server的配置文件来启动https。所以获得证书之后，我们需要自己去修改nginx的配置文件来启动https。
-- --webroot参数表明使用一个叫做webroot的插件来帮助我们更加容易地完成证书申请。该插件要求我们给他提供server路径和对应的域名，-w来指定路径，-d指定域名。第一个域名将被用来命名证书，建议不要把带子域的域名放在第一个。
+- --webroot参数表明使用一个叫做webroot的插件来完成证书申请。webroot插件会利用正在运行的web服务来验证我们对域名具有控制权。该插件要求我们给它提供server路径和对应的域名，-w来指定路径，-d指定域名。第一个域名将被用来命名证书。
 - 执行命令后，certbot会为我们生成一张证书，该证书包含我们提供的所有域名
 
 ## 配置nginx
@@ -59,19 +69,37 @@ let's encrypt所有的信息都保存在/etc/letsencrypt目录下。比较重要
 
 - `archcive` 保存了所有证书的真实证书文件。子目录名为证书名称。
 - `live` 保存了所有证书的超链接，指向保存在archive中的真实证书。
-- `renewwal` 更新证书时需要的配置文件。
+- `renewal` 更新证书时需要的配置文件。
 
 ## 创建重复的证书
+
+在某些特殊情况下，我们可能会需要创建重复的证书。重复有两种含义，第一种是证书所包含的域名相同，第二种是证书命名相同。
+
+对于第一种情况，可以在参数中加入`--duplicate`来告诉certbot创建重复证书。certbot会在archive中创建真正的证书，同时在live中创建新的链接指向新的证书。
 
 ```
 certbot --duplicate certonly --webroot -w /usr/share/nginx/html/blog/ -d nestattacked.com -d www.nestattacked.com
 ```
 
-在某些特殊的情况下，我们可能会需要创建两个含有相同域名的证书。默认情况下，这是不允许的。这时候就需要在参数中加入 `--duplicate`。
+或者，使用`--force-renewal`参数达到更新证书的效果，certbot会在archive中创建新的证书，新证书包含同样的域名，之后将live中的链接指向新的证书。
+
+```
+certbot --force-renewal certonly --webroot -w /usr/share/nginx/html/blog/ -d nestattacked.com -d www.nestattacked.com
+```
+
+对于第二种情况，`--duplicate`可以解决问题。如果希望对原先证书的域名进行扩展，可以加入`--expand`参数。certbot会在archive中创建新的证书，之后将live中的链接指向新的证书。
+
+```
+certbot --expand certonly --webroot -w /usr/share/nginx/html/blog/ -d nestattacked.com -d www.nestattacked.com
+```
+
+## 证书不可修改的特性
+
+证书是不可修改的，添加新的域名、更新证书等操作本质上都是创建新的证书。
 
 # 后续维护
 
-let's encrypt签发的证书只有90天的有效期，我们需要在证书过期前刷新证书。另外，有时候我们会需要给证书添加新的域名或者吊销证书，都可以使用certbot这个脚本来完成。
+let's encrypt签发的证书只有90天的有效期，我们需要在证书过期前刷新证书。另外，使用certbot这个脚本还能查看、删除证书。
 
 ## 查看证书
 
@@ -87,19 +115,9 @@ certbot certificates
 certbot renew
 ```
 
-certbot会更具/etc/letsencrypt目录下的配置文件检查所有证书的有效期，如果证书快要过期，certbot就会更新证书的有效期。我们可以使用crontab配置一个定时任务，每一段时间自动调用 `certbot renew` 命令来自动更新证书。
-
-## 添加新的域名
-
-```
-certbot certonly --cert-name nestattacked.com -d nestattacked.com,a.nestattacked.com,b.nestattacked.com
-```
-
-- --cert-name参数指定要处理的证书名称
-- -d参数来说明新证书要包含的域名
+certbot会根据/etc/letsencrypt目录下的配置文件检查所有证书的有效期，如果证书快要过期，certbot就会自动更新证书。实际上，crontab配置了一个定时任务，周期性调用 `certbot renew` 命令来更新证书。
 
 ## 删除证书
-
 
 ```
 certbot revoke --cert-path /etc/letsencrypt/live/nestattacked.com/cert.pem
@@ -112,3 +130,17 @@ certbot delete --cert-name nestattacked.com
 ```
 
 吊销证书之后，证书的相关文件依然保存在文件系统中。我们可以使用 `delete` 来删除遗留在文件系统的相关文件。这样，一个证书就彻底清除了。
+
+# 自动更新阿里云CDN证书
+
+## Hook
+
+certbot在进行renew操作时，会在对应的时间点执行/etc/letsencrypt/pre-hook.d/、/etc/letsencrypt/renew-hook.d/、/etc/letsencrypt/post-hook.d/下的脚本。这些目录下的脚本分别在renew命令执行前、成功执行后，执行后（无论成功与否）调用。需要特别说明的是，脚本的名字只能由数字、字母、-、_构成，并且需要执行权限，否则将不会被执行。
+
+如果我们想在证书更新完成后重启nginx，使得新的证书能够生效，就可以利用renew-hook。在renew-hook.d目录下创建一个脚本，写入`service nginx reload`即可。
+
+## certUpdater
+
+为了certbot完成renew操作之后，能够自动更新阿里云CDN上的证书，我写了一个node程序certUpdater。这样，证书的事情就再也不用关心了，全自动！
+
+脚本代码放在[github](https://github.com/nestattacked/certUpdater)上，使用方式也在README中有说明。
